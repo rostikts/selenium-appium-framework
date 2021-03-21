@@ -12,3 +12,7 @@ class TestFirst(TestBase):
         self.visit_page(global_server_url)
         self.google.enter_query()
         assert True is True
+
+
+    def test_android(self):
+        pass

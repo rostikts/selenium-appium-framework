@@ -12,11 +12,10 @@ global_server_url = 'https://www.google.com'
 
 @pytest.fixture(scope='function')
 def init_driver(request):
-    driver = driver_factory.DriverManager().return_driver(BROWSER)
+    driver = driver_factory.DriverManager().return_driver('android')
 
     request.cls.driver = driver
     driver.implicitly_wait(10)
 
     yield driver
-    driver.close()
     driver.quit()
